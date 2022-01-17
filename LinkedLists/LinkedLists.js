@@ -64,21 +64,41 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  // Shift method
+  // 1. If there are no nodes, return undefined
+  // 2. Store the current head property in a variable
+  // 3. Set the head property to be the current head's next property
+  // 4. Decrement the length by 1
+  // 5. Return the value of the node removed
+
+  shift() {
+    if (!this.head) {
+      return undefined;
+    }
+
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+
+    if (this.length === 0) {
+      this.tail = null;
+    }
+
+    return currentHead;
+  }
 }
 
 // Create new list with 10 nodes
 let list = new SinglyLinkedList();
 let i = 0;
-while (i < 10) {
-  list.push(i);
+while (i < 5) {
+  console.log(list.push(i), "Created new node");
   i++;
 }
-console.log(list, "Created new list");
 
 // Pop a node from the list
-list.pop();
-console.log(list, "Popped a node");
-list.pop();
-console.log(list, "Popped a node");
-list.pop();
-console.log(list, "Popped a node");
+console.log(list.pop(), "Popped a node");
+
+// Shift a node
+console.log(list.shift(), "Shifted a node");
