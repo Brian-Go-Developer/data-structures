@@ -36,11 +36,10 @@ class SinglyLinkedList {
   }
 }
 
-let list = new SinglyLinkedList();
-let i = 0;
-while (i < 10) {
-  list.push(i);
-  i++;
-}
-
-console.log(list);
+// let list = new SinglyLinkedList();
+// let i = 0;
+// while (i < 10) {
+//   list.push(i);
+//   i++;
+// }
+// console.log(list);
