@@ -111,6 +111,27 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  // Get method
+  // 1. This function should accept an index
+  // 2. If the index is less than zero or greater than or equal to the length of the list, return null
+  // 3. Loop through the list until you reach the index and return the node at that specific index
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    let counter = 0;
+    let current = this.head;
+
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+
+    return current;
+  }
 }
 
 // Create new list with 10 nodes
@@ -129,3 +150,9 @@ console.log(list.shift(), "Shifted a node");
 
 // Unshift a node
 console.log(list.unshift(13), "Unshifted a node with value of 13");
+
+// Get a node by using an index as input
+console.log(
+  list.get(2),
+  "Accessed a node by inputting index with get() method"
+);
